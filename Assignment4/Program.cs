@@ -16,6 +16,7 @@ namespace ConsoleApp1
             Program p = new Program();
             p.Beowulf = new ArrayList();
             p.ReadTextFiles();
+            Console.ReadLine();
         }
         public void Run() { this.ReadTextFiles(); }
         public void ReadTextFiles()
@@ -28,7 +29,8 @@ namespace ConsoleApp1
 
                 while ((ln = file.ReadLine()) != null)
                 {
-                    counter++;
+                    Console.WriteLine(ln);
+                    Beowulf.Add(ln);
                 }
                 file.Close();
                 Console.WriteLine($"File has {counter} lines.");
