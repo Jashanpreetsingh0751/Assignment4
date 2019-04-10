@@ -9,52 +9,54 @@ using System.IO;
 namespace ConsoleApp1
 {
     class Program
-    {
-        ArrayList Beowulf;
-        static void Main(string[] args)
+    
+       
         {
-            Program p = new Program();
-            p.Beowulf = new ArrayList();
-            p.ReadTextFiles();
-            Console.ReadLine();
-        }
-        public void Run() { this.ReadTextFiles(); }
-        public void ReadTextFiles()
-        {
-            //Read file using StreamReader. Reads file line by line
-            using (StreamReader file = new StreamReader(@"U:\Users\732125\New folder/beowulf.txt"))
+            ArrayList Beowulf;
+            static void Main(string[] args)
             {
-                int counter = 0;
+                Program p = new Program();
+                p.Beowulf = new ArrayList();
+                p.ReadTextFiles();
 
-                int number = 0;
 
-                string line;
+            }
+            public void Run() { this.ReadTextFiles(); }
 
-                while ((line = file.ReadLine()) != null)
-
+            public void ReadTextFiles()
+            {
+                using (StreamReader file = new StreamReader("U:/Users/726863.STUDENT/beowulf.txt"))
                 {
+                    int counter = 0;
+                    string line;
+                    string ln;
+                    int number = 0;
 
-                    if (line.Contains("Sea") && line.Contains("Fare") || line.Contains("sea") && line.Contains("fare"))
 
-                    {
+                    while ((ln = file.ReadLine()) != null)
+                        while ((line = file.ReadLine()) != null)
+                        {
+                            Console.WriteLine(ln);
+                            Beowulf.Add(ln);
+                            if (line.Contains("Fare") == true && line.Contains("War") == false || line.Contains("Fare") == true && line.Contains("War") == false)
+                            {
+                                {
+                                    int x = counter - 1;
 
-                        int x = counter - 1;
+                                    number++;
+                                }
+                                counter++;
+                            }
+                            Console.WriteLine($"The number of lines that contains *Fare* without the word *War* are {number}");
 
-                        number++;
 
-                    }
 
-                    counter++;
-
+                            file.Close();
+                            counter = File.ReadLines("").Count();
+                            Console.WriteLine("total number of lines are" + counter);
+                        }
                 }
-
-                Console.WriteLine($"The number of lines that contains *Sea* and *Fare* are {number}");
-
-
-
-                file.Close();
             }
         }
     }
-}
 
