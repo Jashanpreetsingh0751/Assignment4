@@ -15,20 +15,20 @@ namespace ConsoleApp1
         {
             Program p = new Program();
             p.Beowulf = new ArrayList();
+            p.ReadTextFiles();
         }
         public void Run() { this.ReadTextFiles(); }
         public void ReadTextFiles()
         {
             //Read file using StreamReader. Reads file line by line
-            using (StreamReader file = new StreamReader("c: /  c0732125/beowulf.txt"))
+            using (StreamReader file = new StreamReader(@"U:\Users\732125\New folder/beowulf.txt"))
             {
                 int counter = 0;
                 string ln;
 
                 while ((ln = file.ReadLine()) != null)
                 {
-                    Console.WriteLine(ln);
-                    Beowulf.Add(ln);
+                    counter++;
                 }
                 file.Close();
                 Console.WriteLine($"File has {counter} lines.");
