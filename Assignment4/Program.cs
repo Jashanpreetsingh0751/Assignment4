@@ -10,8 +10,8 @@ namespace ConsoleApp1
 {
     class Program
     {
-        ArrayList Beowulf;
-        static void Main(string[] args)
+        ArrayList             Beowulf;
+        static      void              Main  (string[] args)
         {
             Program p = new Program();
             p.Beowulf = new ArrayList();
